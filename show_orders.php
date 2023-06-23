@@ -39,7 +39,7 @@ else{
     include_once('config/database_connection.php');
 
     //Get Orders
-    $order_data = mysqli_query($conn, "SELECT orders.fullname, orders.contact_number, orders.email_address, orders.location_address, orders.city, orders.country, orders.menu_id, menus.menu_item, menus.menu_description, menus.menu_price, orders.delivery_amount, orders.total_amount, orders.order_date, menus.menu_id FROM orders, menus WHERE orders.menu_id = menus.menu_id ");
+    $order_data = mysqli_query($conn, "SELECT orders.fullname, orders.contact_number, orders.email_address, orders.location_address, orders.city, orders.country, orders.menu_id, menus.menu_item, menus.menu_description, menus.menu_price, orders.delivery_amount, orders.total_amount, orders.order_message, orders.order_date, menus.menu_id FROM orders, menus WHERE orders.menu_id = menus.menu_id ");
 
     //Should error occur while fetching Menu data, Log error info
     if( !$order_data ){
