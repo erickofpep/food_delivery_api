@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2023 at 11:38 PM
+-- Generation Time: Jun 23, 2023 at 06:22 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -49,7 +49,8 @@ INSERT INTO `menus` (`menu_id`, `restaurant_id`, `menu_item`, `menu_description`
 (5, 1, 'Goat Light soup with Fufu', 'Noodles and Gravy with Chicken', 70.00, '2023-06-22 01:00:16', '0000-00-00 00:00:00'),
 (6, 1, 'Curry Rice and Beef Stew', 'Curry Rice and Beef Stew', 55.00, '2023-06-22 01:00:42', '0000-00-00 00:00:00'),
 (7, 1, 'Curry Rice with Fish stew', 'Curry Rice with Fish stew', 60.00, '2023-06-22 01:01:21', '0000-00-00 00:00:00'),
-(8, 1, 'Banku and Okro stew with Fish', 'Banku and Okro stew with Fish', 60.00, '2023-06-22 13:46:47', '0000-00-00 00:00:00');
+(8, 1, 'Banku and Okro stew with Fish', 'Banku and Okro stew with Fish', 60.00, '2023-06-22 13:46:47', '0000-00-00 00:00:00'),
+(9, 4, 'Beans stew and Fried Plantain', 'Comes with Fish or Beef or Chevon', 50.00, '2023-06-23 04:48:17', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -69,6 +70,7 @@ CREATE TABLE `orders` (
   `menu_price` float(10,2) NOT NULL,
   `delivery_amount` float(10,2) NOT NULL,
   `total_amount` float(10,2) NOT NULL,
+  `order_message` text NOT NULL,
   `order_date` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -76,9 +78,9 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_id`, `fullname`, `contact_number`, `email_address`, `location_address`, `city`, `country`, `menu_id`, `menu_price`, `delivery_amount`, `total_amount`, `order_date`) VALUES
-(1, 'Kelvin Boako', '0206100233', 'kelvinbk@yahoo.com', 'Kaokudi street, Nima', 'Nima, Accra', 'Ghana', 3, 60.00, 15.00, 75.00, '2023-06-22 21:27:24'),
-(2, 'Kofi Amankwah', '0201000222', 'kamankwah@yahoo.com', '28th Dzormor street, Ofankor', 'Accra', 'Ghana', 8, 60.00, 13.50, 73.50, '2023-06-22 22:27:49');
+INSERT INTO `orders` (`order_id`, `fullname`, `contact_number`, `email_address`, `location_address`, `city`, `country`, `menu_id`, `menu_price`, `delivery_amount`, `total_amount`, `order_message`, `order_date`) VALUES
+(1, 'Kelvin Boako', '0206100233', 'kelvinbk@yahoo.com', 'Kaokudi street, Nima', 'Nima, Accra', 'Ghana', 3, 60.00, 15.00, 75.00, '', '2023-06-22 21:27:24'),
+(2, 'Kofi Amankwah', '0201000222', 'kamankwah@yahoo.com', '28th Dzormor street, Ofankor', 'Accra', 'Ghana', 8, 60.00, 13.50, 73.50, '', '2023-06-22 22:27:49');
 
 -- --------------------------------------------------------
 
@@ -108,7 +110,8 @@ INSERT INTO `restaurants` (`rest_id`, `restaurant_name`, `restaurant_address`, `
 (2, 'Erickof Restaurant', 'Campus breakfast street, Taifa', 'Accra', 'Ghana', '0266100001', 'erickofrest@gmail.com', '', '2023-06-21 19:34:29', '0000-00-00 00:00:00'),
 (3, 'Micky Jay Restaurant', 'Dansoman', 'Accra', 'Ghana', '0547100200', 'mickyjay@hotmail.com', '', '2023-06-21 23:22:54', '0000-00-00 00:00:00'),
 (4, 'Jazzi Bay Restaurant', 'East Legon', 'Accra', 'Ghana', '0201200110', 'jazzibay@gmail.com', '', '2023-06-21 23:23:02', '0000-00-00 00:00:00'),
-(5, 'Mikassa Midorro', 'Nana krom, East Legon', 'Accra', 'Ghana', '0244322100', 'mmidorro@memail.com', '', '2023-06-21 23:54:00', '0000-00-00 00:00:00');
+(5, 'Mikassa Midorro', 'Nana krom, East Legon', 'Accra', 'Ghana', '0244322100', 'mmidorro@memail.com', '', '2023-06-21 23:54:00', '0000-00-00 00:00:00'),
+(6, 'Bingo Lasin Restaurant', '15th Momo street, near Bigups', 'Kaneshie, Accra', 'Country', '0502110003', 'blasin@aol.com', 'xxxxxxxxxxx', '2023-06-23 05:00:04', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -141,7 +144,7 @@ ALTER TABLE `restaurants`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -153,7 +156,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
-  MODIFY `rest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `rest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -66,6 +66,8 @@ else{
 
         $delivery_amount=filter_var($decoded_request_body['delivery_amount'],FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_HIGH);
 
+        $further_message_about_your_order=filter_var($decoded_request_body['further_message_about_your_order'],FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_HIGH);        
+
         include_once('config/database_connection.php');       
 
         if( !array_key_exists('fullname', $decoded_request_body) ){
@@ -234,7 +236,7 @@ else{
             
                 $total_amount = $menu_item_price + $delivery_amount;            
 
-                $add_order_data = mysqli_query( $conn, "INSERT INTO orders (fullname, contact_number, email_address, location_address, city, country, menu_id, menu_price, delivery_amount, total_amount)VALUES ('$fullname', '$contact_number', '$email_address', '$location_address', '$city', '$country', '$menu_id', '$menu_price', '$delivery_amount', '$total_amount' )" );
+                $add_order_data = mysqli_query( $conn, "INSERT INTO orders (fullname, contact_number, email_address, location_address, city, country, menu_id, menu_price, delivery_amount, total_amount, order_message)VALUES ('$fullname', '$contact_number', '$email_address', '$location_address', '$city', '$country', '$menu_id', '$menu_price', '$delivery_amount', '$total_amount', '$further_message_about_your_order' )" );
 
                 if(!$add_order_data ) {
       
