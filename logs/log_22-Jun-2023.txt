@@ -1,0 +1,36 @@
+Log Date/Time ::1 - June 22, 2023, 10:23 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 10:27 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 10:55 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 11:03 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 11:03 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 11:18 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 11:25 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 11:25 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 11:27 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 11:27 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 11:45 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
+Log Date/Time ::1 - June 22, 2023, 11:50 pm
+Database Connection status:  ************ Connected successfully 
+----------------------------------------------------------------------
