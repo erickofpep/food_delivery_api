@@ -36,8 +36,18 @@ else{
     }
     else{
 
-        //Get request body parameters
-        $request_body = file_get_contents('php://input'); 
+    //Get request body parameters
+    $request_body = file_get_contents('php://input'); 
+    
+    if( !$request_body ){
+        echo json_encode([
+            'code' => 101,
+            'status' => 'error',
+            'message' =>'No request body specified'
+        ], JSON_PRETTY_PRINT);
+    } 
+    else{
+
         $decoded_request_body =  json_decode($request_body,true);
     
         $fullname=filter_var($decoded_request_body['fullname'],FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_HIGH);
@@ -56,7 +66,7 @@ else{
 
         $delivery_amount=filter_var($decoded_request_body['delivery_amount'],FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_HIGH);
 
-        include_once('config/database_connection.php');        
+        include_once('config/database_connection.php');       
 
         if( !array_key_exists('fullname', $decoded_request_body) ){
             echo json_encode([
@@ -250,6 +260,8 @@ else{
             }
 
         }
+    
+    }        
 
     }
 
